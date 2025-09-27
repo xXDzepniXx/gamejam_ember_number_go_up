@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://crf6g8mlv30d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rl7aq"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"launch",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rl7aq"]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_rl7aq"]
+length = 28.0
+
+[node name="PlayerEmber" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rl7aq")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rl7aq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(0, 12)
+shape = SubResource("SeparationRayShape2D_rl7aq")
+disabled = true
