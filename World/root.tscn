@@ -1,3 +1,50 @@
-[gd_scene format=3 uid="uid://csi33qbyus6gc"]
+[gd_scene load_steps=7 format=3 uid="uid://csi33qbyus6gc"]
+
+[ext_resource type="PackedScene" uid="uid://crf6g8mlv30d" path="res://Ember/PlayerEmber.tscn" id="1_e00ev"]
+[ext_resource type="Script" uid="uid://fxoleu5kdykd" path="res://World/root.gd" id="1_ildyn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gepe"]
+size = Vector2(1024, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e00ev"]
+size = Vector2(1024, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ildyn"]
+size = Vector2(20, 708)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrijb"]
+size = Vector2(20, 708)
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_ildyn")
+
+[node name="StaticBodyTopWall" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShapeTopWall" type="CollisionShape2D" parent="StaticBodyTopWall"]
+position = Vector2(512, 10)
+shape = SubResource("RectangleShape2D_8gepe")
+
+[node name="StaticBodyBottomWall" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShapeBottomWall" type="CollisionShape2D" parent="StaticBodyBottomWall"]
+position = Vector2(512, 738)
+shape = SubResource("RectangleShape2D_e00ev")
+
+[node name="StaticBodyLeftWall" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShapeLeftWall" type="CollisionShape2D" parent="StaticBodyLeftWall"]
+position = Vector2(10, 374)
+shape = SubResource("RectangleShape2D_ildyn")
+
+[node name="StaticBodyRightWall" type="StaticBody2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShapeRightWall" type="CollisionShape2D" parent="StaticBodyRightWall"]
+position = Vector2(1014, 374)
+shape = SubResource("RectangleShape2D_lrijb")
+
+[node name="PlayerEmber" parent="." instance=ExtResource("1_e00ev")]
+position = Vector2(511, 77)
