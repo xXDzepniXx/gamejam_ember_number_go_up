@@ -94,7 +94,7 @@ func _on_ember_body_entered_bottom_wall(body: Node2D, area: Area2D):
 			$PlayerEmber.disallow_launch()
 			rounds += 1
 			required_points += points_adder_per_round
-			points_adder_per_round += (points_adder_per_round * 2) + 1
+			points_adder_per_round += ceil(points_adder_per_round * 1.5) + 1
 			$PointsRequired.text = str(required_points)
 			await reset_accumulated_points()
 			await all_grids_go_away()

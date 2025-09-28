@@ -32,7 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dyl5i7gipj580" path="res://Art/toiletpaper4.png" id="25_2nojk"]
 [ext_resource type="Texture2D" uid="uid://dqsg35uuibp4w" path="res://Art/toiletpaper.png" id="26_y26sg"]
 [ext_resource type="AudioStream" uid="uid://dygrlxyw0b1p5" path="res://Sounds/bop.ogg" id="27_ag2xf"]
-[ext_resource type="Script" path="res://World/colors_holder.gd" id="27_l1lgv"]
+[ext_resource type="Script" uid="uid://bbn1s45q4uq7r" path="res://World/colors_holder.gd" id="27_l1lgv"]
 [ext_resource type="Texture2D" uid="uid://b2ws2dkihg7tr" path="res://Art/lithium2.png" id="28_1c3uo"]
 [ext_resource type="AudioStream" uid="uid://dy2jjq743mpxu" path="res://Sounds/in_flames.ogg" id="28_7q3gh"]
 [ext_resource type="Texture2D" uid="uid://duy0dtd8nqcwr" path="res://Art/lithium3.png" id="29_cm4j5"]
@@ -351,7 +351,8 @@ frame_progress = 0.57019734
 
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody21"]
 visible = false
-position = Vector2(-122, -12)
+position = Vector2(-122.000015, -12.000009)
+scale = Vector2(1.6874999, 1.6874998)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -387,6 +388,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody22"]
 visible = false
 position = Vector2(-54, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -422,6 +424,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody25"]
 visible = false
 position = Vector2(150, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -457,6 +460,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody24"]
 visible = false
 position = Vector2(82, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -492,6 +496,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody23"]
 visible = false
 position = Vector2(14, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -527,6 +532,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody16"]
 visible = false
 position = Vector2(-122, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -562,6 +568,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody17"]
 visible = false
 position = Vector2(-54, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -597,6 +604,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody18"]
 visible = false
 position = Vector2(14, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -632,6 +640,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody19"]
 visible = false
 position = Vector2(82, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -667,6 +676,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody20"]
 visible = false
 position = Vector2(150, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -702,6 +712,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody11"]
 visible = false
 position = Vector2(-122, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -737,6 +748,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody12"]
 visible = false
 position = Vector2(-54, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -772,6 +784,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody13"]
 visible = false
 position = Vector2(14, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -807,6 +820,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody14"]
 visible = false
 position = Vector2(82, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -842,6 +856,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody15"]
 visible = false
 position = Vector2(150, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -877,6 +892,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody6"]
 visible = false
 position = Vector2(-122, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -912,6 +928,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody7"]
 visible = false
 position = Vector2(-54, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -947,6 +964,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody8"]
 visible = false
 position = Vector2(14, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -982,6 +1000,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody9"]
 visible = false
 position = Vector2(82, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -1017,6 +1036,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody10"]
 visible = false
 position = Vector2(150, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -1052,6 +1072,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody1"]
 visible = false
 position = Vector2(-122, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -1087,6 +1108,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody2"]
 visible = false
 position = Vector2(-54, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -1122,6 +1144,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody5"]
 visible = false
 position = Vector2(150, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -1157,6 +1180,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody4"]
 visible = false
 position = Vector2(82, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
@@ -1192,6 +1216,7 @@ frame_progress = 0.57019734
 [node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody3"]
 visible = false
 position = Vector2(14, -12)
+scale = Vector2(1.687, 1.687)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"boom"
 
