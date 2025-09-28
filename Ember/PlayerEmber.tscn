@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://crf6g8mlv30d"]
+[gd_scene load_steps=10 format=3 uid="uid://crf6g8mlv30d"]
 
 [ext_resource type="Script" uid="uid://b5ivykv8xqa3i" path="res://Ember/player_ember.gd" id="1_46nln"]
 [ext_resource type="Texture2D" uid="uid://cpfnc1iytnhbo" path="res://Art/impact1.png" id="2_2o182"]
 [ext_resource type="Texture2D" uid="uid://dhcwav4ka0e52" path="res://Art/impact2.png" id="3_7gw07"]
 [ext_resource type="Texture2D" uid="uid://b6k1ru2b8upf1" path="res://Art/impact3.png" id="4_45efn"]
 [ext_resource type="Texture2D" uid="uid://b3n2j1mv36oia" path="res://Art/impact4.png" id="5_go3y6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2o182"]
+bounce = 0.8
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rl7aq"]
 animations = [{
@@ -38,6 +41,7 @@ radius = 16.0
 radius = 16.0
 
 [node name="PlayerEmber" type="RigidBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_2o182")
 script = ExtResource("1_46nln")
 metadata/_edit_group_ = true
 

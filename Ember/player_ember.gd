@@ -3,6 +3,7 @@ extends RigidBody2D
 @export var launch_force = 1000.0 # TODO: Maybe make this customizable?
 var is_aiming
 var has_launched
+var world
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,7 +27,7 @@ func _input(_event: InputEvent):
 	if Input.is_action_just_pressed("left_click") and is_aiming and not has_launched:
 		is_aiming = false
 		queue_redraw()
-		launch_ball()
+		launch()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -52,21 +53,34 @@ func _draw():
 		var arrow_points = PackedVector2Array([arrow_tip, base1, base2])
 		draw_colored_polygon(arrow_points, Color.WHITE)
 
-func _on_body_entered(body):
+func _on_body_entered(body: Node2D):
 	# TODO: When the player collides with the bottom wall, 
 	# go to next round or game over, depending on points gathered
+	print("Collided with static body: ", body.name)
 	if body is StaticBody2D:
 		print("Collided with static body: ", body.name)
 
-func _on_body_exited(body):
+func _on_body_exited(body: Node2D):
+	print("Stopped colliding with static body: ", body.name)
 	if body is StaticBody2D:
 		print("Stopped colliding with static body: ", body.name)
 
 # Apply force into direction pointed
-func launch_ball():
+func launch():
 	var mouse_pos = get_global_mouse_position()
 	var direction = (mouse_pos - global_position).normalized() # Get direction pointed
 	
 	freeze = false
 	apply_impulse(direction * launch_force)
 	has_launched = true
+
+func reset(pos_to_go_back_to):
+	set_deferred("linear_velocity", Vector2.ZERO)
+	set_deferred("angular_velocity", 0)
+	set_deferred("freeze", true)
+	set_deferred("global_position", pos_to_go_back_to)
+	is_aiming = false
+	has_launched = false
+
+func setup_world():
+	world = get_parent() # Now we can call the functions of our parent

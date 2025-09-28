@@ -1,19 +1,226 @@
-[gd_scene load_steps=7 format=3 uid="uid://csi33qbyus6gc"]
+[gd_scene load_steps=58 format=3 uid="uid://csi33qbyus6gc"]
 
 [ext_resource type="PackedScene" uid="uid://crf6g8mlv30d" path="res://Ember/PlayerEmber.tscn" id="1_e00ev"]
 [ext_resource type="Script" uid="uid://fxoleu5kdykd" path="res://World/root.gd" id="1_ildyn"]
+[ext_resource type="Texture2D" uid="uid://bb3pqmf6g5d3v" path="res://Art/apple2.png" id="3_pxso2"]
+[ext_resource type="Texture2D" uid="uid://b2g5wrbufx7dn" path="res://Art/apple3.png" id="4_l1lgv"]
+[ext_resource type="Texture2D" uid="uid://chww4ho07ucj4" path="res://Art/apple4.png" id="5_yvvis"]
+[ext_resource type="Texture2D" uid="uid://b5qbkdcetdx2t" path="res://Art/apple.png" id="6_8viqu"]
+[ext_resource type="Texture2D" uid="uid://csv6bupag7dxm" path="res://Art/ballincup2.png" id="7_lts3b"]
+[ext_resource type="Texture2D" uid="uid://bevutdeiosxby" path="res://Art/ballincup3.png" id="8_1c3uo"]
+[ext_resource type="Texture2D" uid="uid://bbg02cw17s6k0" path="res://Art/ballincup4.png" id="9_cm4j5"]
+[ext_resource type="Texture2D" uid="uid://d2mo1n12ti50u" path="res://Art/ballincup.png" id="10_ag2xf"]
+[ext_resource type="Texture2D" uid="uid://dm11gb45rff3n" path="res://Art/hamburger2.png" id="11_7q3gh"]
+[ext_resource type="Texture2D" uid="uid://bfl8m4k8fscfl" path="res://Art/hamburger23.png" id="12_ue53j"]
+[ext_resource type="Texture2D" uid="uid://cnklajqmxqg0q" path="res://Art/hamburger24.png" id="13_vmb8c"]
+[ext_resource type="Texture2D" uid="uid://b8qe7wf5iterb" path="res://Art/hamburger25.png" id="14_iu3ha"]
+[ext_resource type="Texture2D" uid="uid://bnybmo425m5l" path="res://Art/paper2.png" id="15_smie5"]
+[ext_resource type="Texture2D" uid="uid://d0jwjfmgpbiiw" path="res://Art/paper3.png" id="16_e4fgg"]
+[ext_resource type="Texture2D" uid="uid://cm8wjey8rnkqg" path="res://Art/paper4.png" id="17_86oyc"]
+[ext_resource type="Texture2D" uid="uid://cfrg6omhnpsbl" path="res://Art/paper.png" id="18_4vppc"]
+[ext_resource type="Texture2D" uid="uid://c76tqn7g5qril" path="res://Art/spinny2.png" id="19_rhqam"]
+[ext_resource type="Texture2D" uid="uid://b8cdyqfh0tnae" path="res://Art/spinny3.png" id="20_w4ag4"]
+[ext_resource type="Texture2D" uid="uid://cba5nh0yc3nsd" path="res://Art/spinny4.png" id="21_cdkow"]
+[ext_resource type="Texture2D" uid="uid://1wqwtm53rf4h" path="res://Art/spinny.png" id="22_b2mcf"]
+[ext_resource type="Texture2D" uid="uid://c74a6jwmga6wy" path="res://Art/toiletpaper2.png" id="23_hkv6g"]
+[ext_resource type="Texture2D" uid="uid://ixcs3hpv4cgv" path="res://Art/toiletpaper3.png" id="24_xx3x5"]
+[ext_resource type="Texture2D" uid="uid://dyl5i7gipj580" path="res://Art/toiletpaper4.png" id="25_2nojk"]
+[ext_resource type="Texture2D" uid="uid://dqsg35uuibp4w" path="res://Art/toiletpaper.png" id="26_y26sg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gepe"]
 size = Vector2(1024, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e00ev"]
-size = Vector2(1024, 20)
+size = Vector2(1024, 300)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ildyn"]
-size = Vector2(20, 708)
+size = Vector2(20, 689)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lrijb"]
-size = Vector2(20, 708)
+size = Vector2(20, 689)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pxso2"]
+friction = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pxso2"]
+radius = 30.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qp0g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pxso2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l1lgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yvvis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8viqu")
+}],
+"loop": true,
+"name": &"apple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lts3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1c3uo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cm4j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ag2xf")
+}],
+"loop": true,
+"name": &"ballincup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_7q3gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ue53j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_vmb8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_iu3ha")
+}],
+"loop": true,
+"name": &"hamburger",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_smie5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_e4fgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_86oyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_4vppc")
+}],
+"loop": true,
+"name": &"paper",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_rhqam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_w4ag4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_cdkow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_b2mcf")
+}],
+"loop": true,
+"name": &"spinny",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_hkv6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xx3x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_2nojk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_y26sg")
+}],
+"loop": true,
+"name": &"toiletpaper",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l1lgv"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lts3b"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8viqu"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yvvis"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1c3uo"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cm4j5"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ag2xf"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7q3gh"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ue53j"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vmb8c"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iu3ha"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_smie5"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e4fgg"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_86oyc"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vppc"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rhqam"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4ag4"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cdkow"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b2mcf"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hkv6g"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xx3x5"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1qp0g"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y26sg"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2nojk"]
+radius = 30.0
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_ildyn")
@@ -25,26 +232,703 @@ metadata/_edit_group_ = true
 position = Vector2(512, 10)
 shape = SubResource("RectangleShape2D_8gepe")
 
-[node name="StaticBodyBottomWall" type="StaticBody2D" parent="."]
+[node name="AreaBottomwall" type="Area2D" parent="."]
 metadata/_edit_group_ = true
 
-[node name="CollisionShapeBottomWall" type="CollisionShape2D" parent="StaticBodyBottomWall"]
-position = Vector2(512, 738)
+[node name="CollisionShapeBottomWall2" type="CollisionShape2D" parent="AreaBottomwall"]
+position = Vector2(512, 859)
 shape = SubResource("RectangleShape2D_e00ev")
 
 [node name="StaticBodyLeftWall" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
 
 [node name="CollisionShapeLeftWall" type="CollisionShape2D" parent="StaticBodyLeftWall"]
-position = Vector2(10, 374)
+position = Vector2(260, 364.5)
 shape = SubResource("RectangleShape2D_ildyn")
 
 [node name="StaticBodyRightWall" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
 
 [node name="CollisionShapeRightWall" type="CollisionShape2D" parent="StaticBodyRightWall"]
-position = Vector2(1014, 374)
+position = Vector2(764, 364.5)
 shape = SubResource("RectangleShape2D_lrijb")
 
 [node name="PlayerEmber" parent="." instance=ExtResource("1_e00ev")]
 position = Vector2(511, 77)
+
+[node name="Grid" type="Node2D" parent="."]
+
+[node name="AreaGrid21" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 494)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid21"]
+position = Vector2(-122, -12)
+shape = SubResource("CircleShape2D_pxso2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid21"]
+position = Vector2(-122, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid21"]
+offset_left = -142.0
+offset_top = -27.0
+offset_right = -102.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid22" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 494)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid22"]
+position = Vector2(-54, -12)
+shape = SubResource("CircleShape2D_l1lgv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid22"]
+position = Vector2(-54, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid22"]
+offset_left = -74.0
+offset_top = -27.0
+offset_right = -34.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid25" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 494)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid25"]
+position = Vector2(150, -12)
+shape = SubResource("CircleShape2D_lts3b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid25"]
+position = Vector2(150, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid25"]
+offset_left = 130.0
+offset_top = -27.0
+offset_right = 170.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid24" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 494)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid24"]
+position = Vector2(82, -12)
+shape = SubResource("CircleShape2D_8viqu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid24"]
+position = Vector2(82, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid24"]
+offset_left = 62.0
+offset_top = -27.0
+offset_right = 102.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid23" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 494)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid23"]
+position = Vector2(14, -12)
+shape = SubResource("CircleShape2D_yvvis")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid23"]
+position = Vector2(14, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid23"]
+offset_left = -6.0
+offset_top = -27.0
+offset_right = 34.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid16" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 426)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid16"]
+position = Vector2(-122, -12)
+shape = SubResource("CircleShape2D_1c3uo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid16"]
+position = Vector2(-122, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid16"]
+offset_left = -142.0
+offset_top = -27.0
+offset_right = -102.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid17" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 426)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid17"]
+position = Vector2(-54, -12)
+shape = SubResource("CircleShape2D_cm4j5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid17"]
+position = Vector2(-54, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid17"]
+offset_left = -74.0
+offset_top = -27.0
+offset_right = -34.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid18" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 426)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid18"]
+position = Vector2(14, -12)
+shape = SubResource("CircleShape2D_ag2xf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid18"]
+position = Vector2(14, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid18"]
+offset_left = -6.0
+offset_top = -27.0
+offset_right = 34.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid19" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 426)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid19"]
+position = Vector2(82, -12)
+shape = SubResource("CircleShape2D_7q3gh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid19"]
+position = Vector2(82, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid19"]
+offset_left = 62.0
+offset_top = -27.0
+offset_right = 102.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid20" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 426)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid20"]
+position = Vector2(150, -12)
+shape = SubResource("CircleShape2D_ue53j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid20"]
+position = Vector2(150, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid20"]
+offset_left = 130.0
+offset_top = -27.0
+offset_right = 170.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid11" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 358)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid11"]
+position = Vector2(-122, -12)
+shape = SubResource("CircleShape2D_vmb8c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid11"]
+position = Vector2(-122, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid11"]
+offset_left = -142.0
+offset_top = -27.0
+offset_right = -102.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid12" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 358)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid12"]
+position = Vector2(-54, -12)
+shape = SubResource("CircleShape2D_iu3ha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid12"]
+position = Vector2(-54, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid12"]
+offset_left = -74.0
+offset_top = -27.0
+offset_right = -34.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid13" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 358)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid13"]
+position = Vector2(14, -12)
+shape = SubResource("CircleShape2D_smie5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid13"]
+position = Vector2(14, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid13"]
+offset_left = -6.0
+offset_top = -27.0
+offset_right = 34.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid14" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 358)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid14"]
+position = Vector2(82, -12)
+shape = SubResource("CircleShape2D_e4fgg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid14"]
+position = Vector2(82, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid14"]
+offset_left = 62.0
+offset_top = -27.0
+offset_right = 102.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid15" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 358)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid15"]
+position = Vector2(150, -12)
+shape = SubResource("CircleShape2D_86oyc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid15"]
+position = Vector2(150, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid15"]
+offset_left = 130.0
+offset_top = -27.0
+offset_right = 170.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid6" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 290)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid6"]
+position = Vector2(-122, -12)
+shape = SubResource("CircleShape2D_4vppc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid6"]
+position = Vector2(-122, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid6"]
+offset_left = -142.0
+offset_top = -27.0
+offset_right = -102.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid7" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 290)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid7"]
+position = Vector2(-54, -12)
+shape = SubResource("CircleShape2D_rhqam")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid7"]
+position = Vector2(-54, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid7"]
+offset_left = -74.0
+offset_top = -27.0
+offset_right = -34.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid8" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 290)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid8"]
+position = Vector2(14, -12)
+shape = SubResource("CircleShape2D_w4ag4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid8"]
+position = Vector2(14, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid8"]
+offset_left = -6.0
+offset_top = -27.0
+offset_right = 34.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid9" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 290)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid9"]
+position = Vector2(82, -12)
+shape = SubResource("CircleShape2D_cdkow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid9"]
+position = Vector2(82, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid9"]
+offset_left = 62.0
+offset_top = -27.0
+offset_right = 102.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid10" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 290)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid10"]
+position = Vector2(150, -12)
+shape = SubResource("CircleShape2D_b2mcf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid10"]
+position = Vector2(150, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid10"]
+offset_left = 130.0
+offset_top = -27.0
+offset_right = 170.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid1" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 222)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid1"]
+position = Vector2(-122, -12)
+shape = SubResource("CircleShape2D_hkv6g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid1"]
+position = Vector2(-122, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid1"]
+offset_left = -142.0
+offset_top = -27.0
+offset_right = -102.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid2" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 222)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid2"]
+position = Vector2(-54, -12)
+shape = SubResource("CircleShape2D_xx3x5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid2"]
+position = Vector2(-54, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid2"]
+offset_left = -74.0
+offset_top = -27.0
+offset_right = -34.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid5" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 222)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid5"]
+position = Vector2(150, -12)
+shape = SubResource("CircleShape2D_1qp0g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid5"]
+position = Vector2(150, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid5"]
+offset_left = 130.0
+offset_top = -27.0
+offset_right = 170.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid4" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 222)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid4"]
+position = Vector2(82, -12)
+shape = SubResource("CircleShape2D_y26sg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid4"]
+position = Vector2(82, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid4"]
+offset_left = 62.0
+offset_top = -27.0
+offset_right = 102.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AreaGrid3" type="StaticBody2D" parent="Grid"]
+position = Vector2(497, 222)
+physics_material_override = SubResource("PhysicsMaterial_pxso2")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/AreaGrid3"]
+position = Vector2(14, -12)
+shape = SubResource("CircleShape2D_2nojk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/AreaGrid3"]
+position = Vector2(14, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"toiletpaper"
+frame = 1
+frame_progress = 0.57019734
+
+[node name="Label" type="Label" parent="Grid/AreaGrid3"]
+offset_left = -6.0
+offset_top = -27.0
+offset_right = 34.0
+offset_bottom = 1.0
+theme_override_colors/font_color = Color(0.29302043, 0.66698104, 0.98001, 1)
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
