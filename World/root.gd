@@ -131,6 +131,7 @@ func get_points_and_deflate(body: StaticBody2D):
 	
 	$FlamesAudioStream.play() # Play burning sound
 	var label = body.find_child("Label")
+	var boom_anim = body.find_child("BoomAnimation")
 	var label_num = int(label.text)
 	accumulated_points += label_num # Give the full amount, THEN divide it
 	$PointsAccumulated.text = str(accumulated_points)
@@ -140,6 +141,10 @@ func get_points_and_deflate(body: StaticBody2D):
 		label.text = str(label_num)
 		label.add_theme_color_override("font_color", Color(colors[label_num]))
 	else: # It is <=1, which means it has to go
+		boom_anim.play("boom")
+		boom_anim.visible = true
+		await get_tree().create_timer(0.3).timeout
+		boom_anim.visible = false
 		body.visible = false
 		body.collision_layer = 0
 

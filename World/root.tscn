@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://csi33qbyus6gc"]
+[gd_scene load_steps=71 format=3 uid="uid://csi33qbyus6gc"]
 
 [ext_resource type="PackedScene" uid="uid://crf6g8mlv30d" path="res://Ember/PlayerEmber.tscn" id="1_e00ev"]
 [ext_resource type="Script" uid="uid://fxoleu5kdykd" path="res://World/root.gd" id="1_ildyn"]
@@ -11,8 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://bbg02cw17s6k0" path="res://Art/ballincup4.png" id="9_cm4j5"]
 [ext_resource type="Texture2D" uid="uid://d2mo1n12ti50u" path="res://Art/ballincup.png" id="10_ag2xf"]
 [ext_resource type="Texture2D" uid="uid://dm11gb45rff3n" path="res://Art/hamburger2.png" id="11_7q3gh"]
+[ext_resource type="Texture2D" uid="uid://bfoohyskbaunu" path="res://Art/boom1.png" id="11_iu3ha"]
+[ext_resource type="Texture2D" uid="uid://dxj5swoa4tf36" path="res://Art/boom2.png" id="12_smie5"]
 [ext_resource type="Texture2D" uid="uid://bfl8m4k8fscfl" path="res://Art/hamburger23.png" id="12_ue53j"]
+[ext_resource type="Texture2D" uid="uid://d0fcmjimq1ves" path="res://Art/boom3.png" id="13_e4fgg"]
 [ext_resource type="Texture2D" uid="uid://cnklajqmxqg0q" path="res://Art/hamburger24.png" id="13_vmb8c"]
+[ext_resource type="Texture2D" uid="uid://n1tlph6fggj5" path="res://Art/boom4.png" id="14_86oyc"]
 [ext_resource type="Texture2D" uid="uid://b8qe7wf5iterb" path="res://Art/hamburger25.png" id="14_iu3ha"]
 [ext_resource type="Texture2D" uid="uid://bnybmo425m5l" path="res://Art/paper2.png" id="15_smie5"]
 [ext_resource type="Texture2D" uid="uid://d0jwjfmgpbiiw" path="res://Art/paper3.png" id="16_e4fgg"]
@@ -86,6 +90,23 @@ animations = [{
 "loop": true,
 "name": &"ballincup",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_iu3ha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_smie5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_e4fgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_86oyc")
+}],
+"loop": true,
+"name": &"boom",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -289,7 +310,6 @@ position = Vector2(501, 77)
 [node name="Grid" type="Node2D" parent="."]
 
 [node name="StaticBody21" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(467, 514)
 collision_layer = 0
 collision_mask = 0
@@ -300,12 +320,18 @@ metadata/_edit_group_ = true
 position = Vector2(-122, -12)
 shape = SubResource("CircleShape2D_pxso2")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody21"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody21"]
 position = Vector2(-122, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody21"]
+visible = false
+position = Vector2(-122, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody21"]
 offset_left = -142.0
@@ -319,7 +345,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody22" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(477, 514)
 collision_layer = 0
 collision_mask = 0
@@ -330,12 +355,18 @@ metadata/_edit_group_ = true
 position = Vector2(-54, -12)
 shape = SubResource("CircleShape2D_l1lgv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody22"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody22"]
 position = Vector2(-54, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody22"]
+visible = false
+position = Vector2(-54, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody22"]
 offset_left = -74.0
@@ -349,7 +380,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody25" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(507, 514)
 collision_layer = 0
 collision_mask = 0
@@ -360,12 +390,18 @@ metadata/_edit_group_ = true
 position = Vector2(150, -12)
 shape = SubResource("CircleShape2D_lts3b")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody25"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody25"]
 position = Vector2(150, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody25"]
+visible = false
+position = Vector2(150, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody25"]
 offset_left = 130.0
@@ -379,7 +415,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody24" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(497, 514)
 collision_layer = 0
 collision_mask = 0
@@ -390,12 +425,18 @@ metadata/_edit_group_ = true
 position = Vector2(82, -12)
 shape = SubResource("CircleShape2D_8viqu")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody24"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody24"]
 position = Vector2(82, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody24"]
+visible = false
+position = Vector2(82, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody24"]
 offset_left = 62.0
@@ -409,7 +450,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody23" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(487, 514)
 collision_layer = 0
 collision_mask = 0
@@ -420,12 +460,18 @@ metadata/_edit_group_ = true
 position = Vector2(14, -12)
 shape = SubResource("CircleShape2D_yvvis")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody23"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody23"]
 position = Vector2(14, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody23"]
+visible = false
+position = Vector2(14, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody23"]
 offset_left = -6.0
@@ -439,7 +485,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody16" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(467, 436)
 collision_layer = 0
 collision_mask = 0
@@ -450,12 +495,18 @@ metadata/_edit_group_ = true
 position = Vector2(-122, -12)
 shape = SubResource("CircleShape2D_1c3uo")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody16"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody16"]
 position = Vector2(-122, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody16"]
+visible = false
+position = Vector2(-122, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody16"]
 offset_left = -142.0
@@ -469,7 +520,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody17" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(477, 436)
 collision_layer = 0
 collision_mask = 0
@@ -480,12 +530,18 @@ metadata/_edit_group_ = true
 position = Vector2(-54, -12)
 shape = SubResource("CircleShape2D_cm4j5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody17"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody17"]
 position = Vector2(-54, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody17"]
+visible = false
+position = Vector2(-54, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody17"]
 offset_left = -74.0
@@ -499,7 +555,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody18" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(487, 436)
 collision_layer = 0
 collision_mask = 0
@@ -510,12 +565,18 @@ metadata/_edit_group_ = true
 position = Vector2(14, -12)
 shape = SubResource("CircleShape2D_ag2xf")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody18"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody18"]
 position = Vector2(14, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody18"]
+visible = false
+position = Vector2(14, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody18"]
 offset_left = -6.0
@@ -529,7 +590,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody19" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(497, 436)
 collision_layer = 0
 collision_mask = 0
@@ -540,12 +600,18 @@ metadata/_edit_group_ = true
 position = Vector2(82, -12)
 shape = SubResource("CircleShape2D_7q3gh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody19"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody19"]
 position = Vector2(82, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody19"]
+visible = false
+position = Vector2(82, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody19"]
 offset_left = 62.0
@@ -559,7 +625,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody20" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(507, 436)
 collision_layer = 0
 collision_mask = 0
@@ -570,12 +635,18 @@ metadata/_edit_group_ = true
 position = Vector2(150, -12)
 shape = SubResource("CircleShape2D_ue53j")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody20"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody20"]
 position = Vector2(150, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody20"]
+visible = false
+position = Vector2(150, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody20"]
 offset_left = 130.0
@@ -589,7 +660,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody11" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(467, 358)
 collision_layer = 0
 collision_mask = 0
@@ -600,12 +670,18 @@ metadata/_edit_group_ = true
 position = Vector2(-122, -12)
 shape = SubResource("CircleShape2D_vmb8c")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody11"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody11"]
 position = Vector2(-122, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody11"]
+visible = false
+position = Vector2(-122, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody11"]
 offset_left = -142.0
@@ -619,7 +695,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody12" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(477, 358)
 collision_layer = 0
 collision_mask = 0
@@ -630,12 +705,18 @@ metadata/_edit_group_ = true
 position = Vector2(-54, -12)
 shape = SubResource("CircleShape2D_iu3ha")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody12"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody12"]
 position = Vector2(-54, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody12"]
+visible = false
+position = Vector2(-54, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody12"]
 offset_left = -74.0
@@ -649,7 +730,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody13" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(487, 358)
 collision_layer = 0
 collision_mask = 0
@@ -660,12 +740,18 @@ metadata/_edit_group_ = true
 position = Vector2(14, -12)
 shape = SubResource("CircleShape2D_smie5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody13"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody13"]
 position = Vector2(14, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody13"]
+visible = false
+position = Vector2(14, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody13"]
 offset_left = -6.0
@@ -679,7 +765,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody14" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(497, 358)
 collision_layer = 0
 collision_mask = 0
@@ -690,12 +775,18 @@ metadata/_edit_group_ = true
 position = Vector2(82, -12)
 shape = SubResource("CircleShape2D_e4fgg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody14"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody14"]
 position = Vector2(82, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody14"]
+visible = false
+position = Vector2(82, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody14"]
 offset_left = 62.0
@@ -709,7 +800,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody15" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(507, 358)
 collision_layer = 0
 collision_mask = 0
@@ -720,12 +810,18 @@ metadata/_edit_group_ = true
 position = Vector2(150, -12)
 shape = SubResource("CircleShape2D_86oyc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody15"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody15"]
 position = Vector2(150, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody15"]
+visible = false
+position = Vector2(150, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody15"]
 offset_left = 130.0
@@ -739,7 +835,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody6" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(467, 280)
 collision_layer = 0
 collision_mask = 0
@@ -750,12 +845,18 @@ metadata/_edit_group_ = true
 position = Vector2(-122, -12)
 shape = SubResource("CircleShape2D_4vppc")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody6"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody6"]
 position = Vector2(-122, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody6"]
+visible = false
+position = Vector2(-122, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody6"]
 offset_left = -142.0
@@ -769,7 +870,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody7" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(477, 280)
 collision_layer = 0
 collision_mask = 0
@@ -780,12 +880,18 @@ metadata/_edit_group_ = true
 position = Vector2(-54, -12)
 shape = SubResource("CircleShape2D_rhqam")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody7"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody7"]
 position = Vector2(-54, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody7"]
+visible = false
+position = Vector2(-54, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody7"]
 offset_left = -74.0
@@ -799,7 +905,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody8" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(487, 280)
 collision_layer = 0
 collision_mask = 0
@@ -810,12 +915,18 @@ metadata/_edit_group_ = true
 position = Vector2(14, -12)
 shape = SubResource("CircleShape2D_w4ag4")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody8"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody8"]
 position = Vector2(14, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody8"]
+visible = false
+position = Vector2(14, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody8"]
 offset_left = -6.0
@@ -829,7 +940,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody9" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(497, 280)
 collision_layer = 0
 collision_mask = 0
@@ -840,12 +950,18 @@ metadata/_edit_group_ = true
 position = Vector2(82, -12)
 shape = SubResource("CircleShape2D_cdkow")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody9"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody9"]
 position = Vector2(82, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody9"]
+visible = false
+position = Vector2(82, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody9"]
 offset_left = 62.0
@@ -859,7 +975,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody10" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(507, 280)
 collision_layer = 0
 collision_mask = 0
@@ -870,12 +985,18 @@ metadata/_edit_group_ = true
 position = Vector2(150, -12)
 shape = SubResource("CircleShape2D_b2mcf")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody10"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody10"]
 position = Vector2(150, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody10"]
+visible = false
+position = Vector2(150, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody10"]
 offset_left = 130.0
@@ -889,7 +1010,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody1" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(467, 202)
 collision_layer = 0
 collision_mask = 0
@@ -900,12 +1020,18 @@ metadata/_edit_group_ = true
 position = Vector2(-122, -12)
 shape = SubResource("CircleShape2D_hkv6g")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody1"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody1"]
 position = Vector2(-122, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody1"]
+visible = false
+position = Vector2(-122, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody1"]
 offset_left = -142.0
@@ -919,7 +1045,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody2" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(477, 202)
 collision_layer = 0
 collision_mask = 0
@@ -930,12 +1055,18 @@ metadata/_edit_group_ = true
 position = Vector2(-54, -12)
 shape = SubResource("CircleShape2D_xx3x5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody2"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody2"]
 position = Vector2(-54, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody2"]
+visible = false
+position = Vector2(-54, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody2"]
 offset_left = -74.0
@@ -949,7 +1080,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody5" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(507, 202)
 collision_layer = 0
 collision_mask = 0
@@ -960,12 +1090,18 @@ metadata/_edit_group_ = true
 position = Vector2(150, -12)
 shape = SubResource("CircleShape2D_1qp0g")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody5"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody5"]
 position = Vector2(150, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody5"]
+visible = false
+position = Vector2(150, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody5"]
 offset_left = 130.0
@@ -979,7 +1115,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody4" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(497, 202)
 collision_layer = 0
 collision_mask = 0
@@ -990,12 +1125,18 @@ metadata/_edit_group_ = true
 position = Vector2(82, -12)
 shape = SubResource("CircleShape2D_y26sg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody4"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody4"]
 position = Vector2(82, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody4"]
+visible = false
+position = Vector2(82, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody4"]
 offset_left = 62.0
@@ -1009,7 +1150,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody3" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(487, 202)
 collision_layer = 0
 collision_mask = 0
@@ -1020,12 +1160,18 @@ metadata/_edit_group_ = true
 position = Vector2(14, -12)
 shape = SubResource("CircleShape2D_2nojk")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Grid/StaticBody3"]
+[node name="NormalAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody3"]
 position = Vector2(14, -12)
 sprite_frames = SubResource("SpriteFrames_1qp0g")
 animation = &"toiletpaper"
 frame = 1
 frame_progress = 0.57019734
+
+[node name="BoomAnimation" type="AnimatedSprite2D" parent="Grid/StaticBody3"]
+visible = false
+position = Vector2(14, -12)
+sprite_frames = SubResource("SpriteFrames_1qp0g")
+animation = &"boom"
 
 [node name="Label" type="Label" parent="Grid/StaticBody3"]
 offset_left = -6.0

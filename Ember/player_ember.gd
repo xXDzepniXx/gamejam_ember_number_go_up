@@ -34,7 +34,7 @@ func _input(_event: InputEvent):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if not $AnimatedSprite2D.is_playing():
-		$AnimatedSprite2D.play("idle")
+		$AnimatedSprite2D.play("idle2")
 
 # Called when CanvasItem has been requested to redraw (after queue_redraw() is called, either manually or by the engine).
 func _draw():
