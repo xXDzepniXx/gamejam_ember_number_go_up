@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://csi33qbyus6gc"]
+[gd_scene load_steps=59 format=3 uid="uid://csi33qbyus6gc"]
 
 [ext_resource type="PackedScene" uid="uid://crf6g8mlv30d" path="res://Ember/PlayerEmber.tscn" id="1_e00ev"]
 [ext_resource type="Script" uid="uid://fxoleu5kdykd" path="res://World/root.gd" id="1_ildyn"]
@@ -26,13 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://ixcs3hpv4cgv" path="res://Art/toiletpaper3.png" id="24_xx3x5"]
 [ext_resource type="Texture2D" uid="uid://dyl5i7gipj580" path="res://Art/toiletpaper4.png" id="25_2nojk"]
 [ext_resource type="Texture2D" uid="uid://dqsg35uuibp4w" path="res://Art/toiletpaper.png" id="26_y26sg"]
-[ext_resource type="AudioStream" uid="uid://dygrlxyw0b1p5" path="res://Sounds/bop.ogg" id="27_ag2xf"]
 [ext_resource type="Script" uid="uid://bbn1s45q4uq7r" path="res://World/colors_holder.gd" id="27_l1lgv"]
-[ext_resource type="Texture2D" uid="uid://b2ws2dkihg7tr" path="res://Art/lithium2.png" id="28_1c3uo"]
-[ext_resource type="AudioStream" uid="uid://dy2jjq743mpxu" path="res://Sounds/in_flames.ogg" id="28_7q3gh"]
-[ext_resource type="Texture2D" uid="uid://duy0dtd8nqcwr" path="res://Art/lithium3.png" id="29_cm4j5"]
-[ext_resource type="Texture2D" uid="uid://cq5h6hd16nkep" path="res://Art/lithium4.png" id="30_ag2xf"]
-[ext_resource type="Texture2D" uid="uid://b8yxukpn7p8g3" path="res://Art/lithium.png" id="31_7q3gh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gepe"]
 size = Vector2(1024, 20)
@@ -228,29 +222,6 @@ radius = 30.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_2nojk"]
 radius = 30.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1lgv"]
-size = Vector2(48, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ue53j"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("28_1c3uo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_cm4j5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_ag2xf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_7q3gh")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
 [node name="World" type="Node2D"]
 script = ExtResource("1_ildyn")
 
@@ -284,15 +255,12 @@ position = Vector2(764, 364.5)
 shape = SubResource("RectangleShape2D_lrijb")
 
 [node name="PlayerEmber" parent="." instance=ExtResource("1_e00ev")]
-position = Vector2(501, 77)
+position = Vector2(511, 77)
 
 [node name="Grid" type="Node2D" parent="."]
 
 [node name="StaticBody21" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(467, 514)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -319,10 +287,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody22" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(477, 514)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -349,10 +314,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody25" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(507, 514)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -379,10 +341,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody24" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(497, 514)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -409,10 +368,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody23" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(487, 514)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -439,10 +395,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody16" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(467, 436)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -469,10 +422,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody17" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(477, 436)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -499,10 +449,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody18" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(487, 436)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -529,10 +476,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody19" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(497, 436)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -559,10 +503,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody20" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(507, 436)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -589,10 +530,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody11" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(467, 358)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -619,10 +557,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody12" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(477, 358)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -649,10 +584,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody13" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(487, 358)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -679,10 +611,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody14" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(497, 358)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -709,10 +638,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody15" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(507, 358)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -739,10 +665,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody6" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(467, 280)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -769,10 +692,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody7" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(477, 280)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -799,10 +719,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody8" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(487, 280)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -829,10 +746,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody9" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(497, 280)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -859,10 +773,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody10" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(507, 280)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -889,10 +800,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody1" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(467, 202)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -919,10 +827,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody2" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(477, 202)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -949,10 +854,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody5" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(507, 202)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -979,10 +881,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody4" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(497, 202)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -1009,10 +908,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StaticBody3" type="StaticBody2D" parent="Grid"]
-visible = false
 position = Vector2(487, 202)
-collision_layer = 0
-collision_mask = 0
 physics_material_override = SubResource("PhysicsMaterial_pxso2")
 metadata/_edit_group_ = true
 
@@ -1041,80 +937,6 @@ vertical_alignment = 1
 [node name="ColorsHolder" type="Node2D" parent="."]
 script = ExtResource("27_l1lgv")
 
-[node name="Lives" type="Node2D" parent="."]
-
-[node name="Life_1" type="StaticBody2D" parent="Lives"]
-position = Vector2(774, 20)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lives/Life_1"]
-position = Vector2(24, 24)
-shape = SubResource("RectangleShape2D_l1lgv")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Lives/Life_1"]
-position = Vector2(23.999964, 24)
-scale = Vector2(0.13043478, 0.13043478)
-sprite_frames = SubResource("SpriteFrames_ue53j")
-animation = &"idle"
-frame = 3
-frame_progress = 0.18683025
-
-[node name="Life_2" type="StaticBody2D" parent="Lives"]
-position = Vector2(822, 20)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lives/Life_2"]
-position = Vector2(24, 24)
-shape = SubResource("RectangleShape2D_l1lgv")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Lives/Life_2"]
-position = Vector2(24, 24)
-scale = Vector2(0.13043478, 0.13043478)
-sprite_frames = SubResource("SpriteFrames_ue53j")
-animation = &"idle"
-frame = 3
-frame_progress = 0.18683025
-
-[node name="Life_3" type="StaticBody2D" parent="Lives"]
-position = Vector2(870, 20)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lives/Life_3"]
-position = Vector2(24, 24)
-shape = SubResource("RectangleShape2D_l1lgv")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Lives/Life_3"]
-position = Vector2(24, 24)
-scale = Vector2(0.13043478, 0.13043478)
-sprite_frames = SubResource("SpriteFrames_ue53j")
-animation = &"idle"
-frame = 3
-frame_progress = 0.18683025
-
-[node name="Life_4" type="StaticBody2D" parent="Lives"]
-position = Vector2(918, 20)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Lives/Life_4"]
-position = Vector2(24, 24)
-shape = SubResource("RectangleShape2D_l1lgv")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Lives/Life_4"]
-position = Vector2(24, 24)
-scale = Vector2(0.13043478, 0.13043478)
-sprite_frames = SubResource("SpriteFrames_ue53j")
-animation = &"idle"
-frame = 3
-frame_progress = 0.18683025
-
-[node name="BopAudioStream" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(500, 346)
-stream = ExtResource("27_ag2xf")
-
-[node name="FlamesAudioStream" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(501, 346)
-stream = ExtResource("28_7q3gh")
-
 [node name="PointsAccumulated" type="Label" parent="."]
 offset_top = 20.0
 offset_right = 103.23389
@@ -1127,5 +949,4 @@ offset_top = 42.0
 offset_right = 103.23389
 offset_bottom = 65.0
 scale = Vector2(2.1407702, 0.9403147)
-theme_override_colors/font_color = Color(0.87877905, 0, 0.27516547, 1)
 text = "0"

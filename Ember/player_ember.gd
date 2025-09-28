@@ -3,6 +3,7 @@ extends RigidBody2D
 @export var launch_force = 1000.0 # TODO: Maybe make this customizable?
 var is_aiming
 var has_launched
+var can_launch
 var world
 
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +14,7 @@ func _ready() -> void:
 	max_contacts_reported = 10
 	is_aiming = false
 	has_launched = false
+	can_launch = false
 	body_entered.connect(_on_body_entered) # Setup signal
 	body_exited.connect(_on_body_exited)
 
@@ -24,7 +26,7 @@ func _input(_event: InputEvent):
 	if Input.is_action_just_released("right_click"):
 		is_aiming = false
 		queue_redraw()
-	if Input.is_action_just_pressed("left_click") and is_aiming and not has_launched:
+	if Input.is_action_just_pressed("left_click") and is_aiming and not has_launched and can_launch:
 		is_aiming = false
 		queue_redraw()
 		launch()
@@ -61,17 +63,18 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 			# and we do this because otherwise the player gets stuck OR
 			# they won't have as much fun
 			var normal = state.get_contact_local_normal(i)
-			var force_magnitude = 225
+			var force_magnitude = 175
 			state.apply_central_impulse(normal * force_magnitude)
 
 func _on_body_entered(body: Node2D):
 	if body is StaticBody2D and not "Wall" in body.name:
 		world.get_points_and_deflate(body)
-		print("Collided with static body: ", body.name)
+		#print("Collided with static body: ", body.name)
 
 func _on_body_exited(body: Node2D):
 	if body is StaticBody2D and not "Wall" in body.name:
-		print("Stopped colliding with static body: ", body.name)
+		pass
+		#print("Stopped colliding with static body: ", body.name)
 
 # Apply force into direction pointed
 func launch():
@@ -92,3 +95,9 @@ func reset(pos_to_go_back_to):
 
 func setup_world():
 	world = get_parent() # Now we can call the functions of our parent
+
+func allow_launch():
+	can_launch = true
+
+func disallow_launch():
+	can_launch = false
