@@ -1,7 +1,8 @@
-[gd_scene load_steps=72 format=3 uid="uid://csi33qbyus6gc"]
+[gd_scene load_steps=75 format=3 uid="uid://csi33qbyus6gc"]
 
 [ext_resource type="PackedScene" uid="uid://crf6g8mlv30d" path="res://Ember/PlayerEmber.tscn" id="1_e00ev"]
 [ext_resource type="Script" uid="uid://fxoleu5kdykd" path="res://World/root.gd" id="1_ildyn"]
+[ext_resource type="Texture2D" uid="uid://cf4mcbk0a2cwd" path="res://Ember/wall.png" id="3_4vppc"]
 [ext_resource type="Texture2D" uid="uid://bb3pqmf6g5d3v" path="res://Art/apple2.png" id="3_pxso2"]
 [ext_resource type="Texture2D" uid="uid://b2g5wrbufx7dn" path="res://Art/apple3.png" id="4_l1lgv"]
 [ext_resource type="Texture2D" uid="uid://chww4ho07ucj4" path="res://Art/apple4.png" id="5_yvvis"]
@@ -31,19 +32,22 @@
 [ext_resource type="Texture2D" uid="uid://dyl5i7gipj580" path="res://Art/toiletpaper4.png" id="25_2nojk"]
 [ext_resource type="Texture2D" uid="uid://dqsg35uuibp4w" path="res://Art/toiletpaper.png" id="26_y26sg"]
 [ext_resource type="AudioStream" uid="uid://dygrlxyw0b1p5" path="res://Sounds/bop.ogg" id="27_ag2xf"]
-[ext_resource type="Script" uid="uid://bbn1s45q4uq7r" path="res://World/colors_holder.gd" id="27_l1lgv"]
+[ext_resource type="Script" path="res://World/colors_holder.gd" id="27_l1lgv"]
 [ext_resource type="Texture2D" uid="uid://b2ws2dkihg7tr" path="res://Art/lithium2.png" id="28_1c3uo"]
 [ext_resource type="AudioStream" uid="uid://dy2jjq743mpxu" path="res://Sounds/in_flames.ogg" id="28_7q3gh"]
 [ext_resource type="Texture2D" uid="uid://duy0dtd8nqcwr" path="res://Art/lithium3.png" id="29_cm4j5"]
 [ext_resource type="Texture2D" uid="uid://cq5h6hd16nkep" path="res://Art/lithium4.png" id="30_ag2xf"]
 [ext_resource type="Texture2D" uid="uid://b8yxukpn7p8g3" path="res://Art/lithium.png" id="31_7q3gh"]
 [ext_resource type="AudioStream" uid="uid://dg50o54b6f6em" path="res://Sounds/lose.ogg" id="38_smie5"]
+[ext_resource type="Texture2D" uid="uid://c3irt401j8qkd" path="res://burntwall.png" id="40_86oyc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gepe"]
 size = Vector2(1024, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e00ev"]
 size = Vector2(1024, 300)
+
+[sub_resource type="GDScript" id="GDScript_e4fgg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ildyn"]
 size = Vector2(20, 689)
@@ -276,6 +280,12 @@ animations = [{
 [node name="World" type="Node2D"]
 script = ExtResource("1_ildyn")
 
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -755
+position = Vector2(685.8906, 313.76563)
+scale = Vector2(1.4783299, 2.6242945)
+texture = ExtResource("40_86oyc")
+
 [node name="StaticBodyTopWall" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
 
@@ -292,11 +302,17 @@ shape = SubResource("RectangleShape2D_e00ev")
 
 [node name="StaticBodyLeftWall" type="StaticBody2D" parent="."]
 position = Vector2(-29, 0)
+script = SubResource("GDScript_e4fgg")
 metadata/_edit_group_ = true
 
 [node name="CollisionShapeLeftWall" type="CollisionShape2D" parent="StaticBodyLeftWall"]
 position = Vector2(260, 364.5)
 shape = SubResource("RectangleShape2D_ildyn")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBodyLeftWall"]
+position = Vector2(-18.499985, 321)
+scale = Vector2(0.7964237, 1.171831)
+texture = ExtResource("3_4vppc")
 
 [node name="StaticBodyRightWall" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true
@@ -304,6 +320,11 @@ metadata/_edit_group_ = true
 [node name="CollisionShapeRightWall" type="CollisionShape2D" parent="StaticBodyRightWall"]
 position = Vector2(764, 364.5)
 shape = SubResource("RectangleShape2D_lrijb")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBodyRightWall"]
+position = Vector2(1092, 321)
+scale = Vector2(0.91884464, 1.171831)
+texture = ExtResource("3_4vppc")
 
 [node name="PlayerEmber" parent="." instance=ExtResource("1_e00ev")]
 position = Vector2(501, 77)
