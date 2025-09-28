@@ -1,9 +1,10 @@
-[gd_scene load_steps=75 format=3 uid="uid://csi33qbyus6gc"]
+[gd_scene load_steps=76 format=3 uid="uid://csi33qbyus6gc"]
 
 [ext_resource type="PackedScene" uid="uid://crf6g8mlv30d" path="res://Ember/PlayerEmber.tscn" id="1_e00ev"]
 [ext_resource type="Script" uid="uid://fxoleu5kdykd" path="res://World/root.gd" id="1_ildyn"]
-[ext_resource type="Texture2D" uid="uid://cf4mcbk0a2cwd" path="res://Ember/wall.png" id="3_4vppc"]
+[ext_resource type="Texture2D" uid="uid://cf4mcbk0a2cwd" path="res://Art/wall.png" id="3_4vppc"]
 [ext_resource type="Texture2D" uid="uid://bb3pqmf6g5d3v" path="res://Art/apple2.png" id="3_pxso2"]
+[ext_resource type="Texture2D" uid="uid://kgdmmfvrrnev" path="res://Art/firewood.png" id="3_rhqam"]
 [ext_resource type="Texture2D" uid="uid://b2g5wrbufx7dn" path="res://Art/apple3.png" id="4_l1lgv"]
 [ext_resource type="Texture2D" uid="uid://chww4ho07ucj4" path="res://Art/apple4.png" id="5_yvvis"]
 [ext_resource type="Texture2D" uid="uid://b5qbkdcetdx2t" path="res://Art/apple.png" id="6_8viqu"]
@@ -39,7 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://cq5h6hd16nkep" path="res://Art/lithium4.png" id="30_ag2xf"]
 [ext_resource type="Texture2D" uid="uid://b8yxukpn7p8g3" path="res://Art/lithium.png" id="31_7q3gh"]
 [ext_resource type="AudioStream" uid="uid://dg50o54b6f6em" path="res://Sounds/lose.ogg" id="38_smie5"]
-[ext_resource type="Texture2D" uid="uid://c3irt401j8qkd" path="res://burntwall.png" id="40_86oyc"]
+[ext_resource type="Texture2D" uid="uid://c3irt401j8qkd" path="res://Art/burntwall.png" id="40_86oyc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gepe"]
 size = Vector2(1024, 20)
@@ -285,6 +286,11 @@ z_index = -755
 position = Vector2(685.8906, 313.76563)
 scale = Vector2(1.4783299, 2.6242945)
 texture = ExtResource("40_86oyc")
+
+[node name="Firewood" type="Sprite2D" parent="."]
+position = Vector2(573.5, 612.5)
+scale = Vector2(0.84382576, 1.0436894)
+texture = ExtResource("3_rhqam")
 
 [node name="StaticBodyTopWall" type="StaticBody2D" parent="."]
 metadata/_edit_group_ = true

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf4mcbk0a2cwd"
-path="res://.godot/imported/wall.png-aeae219e3aa82e27e9bf58756db01d0b.ctex"
+uid="uid://c3irt401j8qkd"
+path="res://.godot/imported/burntwall.png-214127b98606b314090b3b531d6ed4ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ember/wall.png"
-dest_files=["res://.godot/imported/wall.png-aeae219e3aa82e27e9bf58756db01d0b.ctex"]
+source_file="res://Art/burntwall.png"
+dest_files=["res://.godot/imported/burntwall.png-214127b98606b314090b3b531d6ed4ca.ctex"]
 
 [params]
 
