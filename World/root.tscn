@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://csi33qbyus6gc"]
+[gd_scene load_steps=72 format=3 uid="uid://csi33qbyus6gc"]
 
 [ext_resource type="PackedScene" uid="uid://crf6g8mlv30d" path="res://Ember/PlayerEmber.tscn" id="1_e00ev"]
 [ext_resource type="Script" uid="uid://fxoleu5kdykd" path="res://World/root.gd" id="1_ildyn"]
@@ -37,6 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://duy0dtd8nqcwr" path="res://Art/lithium3.png" id="29_cm4j5"]
 [ext_resource type="Texture2D" uid="uid://cq5h6hd16nkep" path="res://Art/lithium4.png" id="30_ag2xf"]
 [ext_resource type="Texture2D" uid="uid://b8yxukpn7p8g3" path="res://Art/lithium.png" id="31_7q3gh"]
+[ext_resource type="AudioStream" uid="uid://dg50o54b6f6em" path="res://Sounds/lose.ogg" id="38_smie5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8gepe"]
 size = Vector2(1024, 20)
@@ -1260,6 +1261,10 @@ stream = ExtResource("27_ag2xf")
 [node name="FlamesAudioStream" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(501, 346)
 stream = ExtResource("28_7q3gh")
+
+[node name="LoseAudioStream" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(501, 346)
+stream = ExtResource("38_smie5")
 
 [node name="PointsAccumulated" type="Label" parent="."]
 offset_top = 20.0

@@ -104,6 +104,7 @@ func _on_ember_body_entered_bottom_wall(body: Node2D, area: Area2D):
 			await save_game_prev_state()
 		else:
 			# DID NOT PASS ROUND, LIVES REMAIN THE SAME, LOAD PREVIOUS STATE
+			$LoseAudioStream.play()
 			player_lives -= 1
 			$PlayerEmber.disallow_launch()
 			await reset_accumulated_points()
