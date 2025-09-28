@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b3n2j1mv36oia" path="res://Art/impact4.png" id="5_go3y6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2o182"]
-bounce = 0.8
+friction = 0.3
+bounce = 0.75
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rl7aq"]
 animations = [{

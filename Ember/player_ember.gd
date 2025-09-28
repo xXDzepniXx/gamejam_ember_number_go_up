@@ -53,16 +53,24 @@ func _draw():
 		var arrow_points = PackedVector2Array([arrow_tip, base1, base2])
 		draw_colored_polygon(arrow_points, Color.WHITE)
 
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	for i in range(state.get_contact_count()):
+		var collider = state.get_contact_collider_object(i)
+		if collider is StaticBody2D and not "Wall" in collider.name and collider.visible == true:
+			# This applies a force OPPOSITE to the contact point,
+			# and we do this because otherwise the player gets stuck OR
+			# they won't have as much fun
+			var normal = state.get_contact_local_normal(i)
+			var force_magnitude = 225
+			state.apply_central_impulse(normal * force_magnitude)
+
 func _on_body_entered(body: Node2D):
-	# TODO: When the player collides with the bottom wall, 
-	# go to next round or game over, depending on points gathered
-	print("Collided with static body: ", body.name)
-	if body is StaticBody2D:
+	if body is StaticBody2D and not "Wall" in body.name:
+		world.get_points_and_deflate(body)
 		print("Collided with static body: ", body.name)
 
 func _on_body_exited(body: Node2D):
-	print("Stopped colliding with static body: ", body.name)
-	if body is StaticBody2D:
+	if body is StaticBody2D and not "Wall" in body.name:
 		print("Stopped colliding with static body: ", body.name)
 
 # Apply force into direction pointed
